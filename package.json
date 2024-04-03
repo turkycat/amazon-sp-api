@@ -1,6 +1,6 @@
 {
   "name": "amazon-sp-api-tcat",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Amazon Selling Partner API client",
   "main": "index.js",
   "directories": {
