@@ -23,6 +23,7 @@ interface Options {
   auth_endpoint?: string;
   endpoint?: string;
   sandbox_endpoint?: string;
+  use_default_host?: boolean;
 }
 
 export interface Config {
