@@ -1,6 +1,6 @@
 {
-  "name": "amazon-sp-api",
-  "version": "1.0.6",
+  "name": "amazon-sp-api-tcat",
+  "version": "1.0.8",
   "description": "Amazon Selling Partner API client",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,7 @@
     "mws",
     "amazon mws"
   ],
-  "author": "Jens Lübberstedt <jens@amz.tools>",
+  "author": "turkycat@pm.me",
   "license": "MIT",
   "dependencies": {
     "csvtojson": "^2.0.10",
@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:amz-tools/amazon-sp-api.git"
+    "url": "git@github.com:turkycat/amazon-sp-api.git"
   },
   "scripts": {
     "test": "mocha --config ./test/.mocharc.js"

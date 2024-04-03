@@ -143,7 +143,7 @@ import {
 
 import { GetMarketplaceParticipationsResponse } from "./operations/sellers";
 
-declare module "amazon-sp-api" {
+declare module "amazon-sp-api-tcat" {
   export class SellingPartner {
     constructor(config: Config);
 

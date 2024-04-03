@@ -20,6 +20,9 @@ interface Options {
   only_grantless_operations?: boolean;
   use_sandbox?: boolean;
   user_agent?: string;
+  auth_endpoint?: string;
+  endpoint?: string;
+  sandbox_endpoint?: string;
 }
 
 export interface Config {
