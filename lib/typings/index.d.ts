@@ -45,8 +45,6 @@ import {
   EstimateTransportResponse,
   GetBillOfLadingPath,
   GetBillOfLadingResponse,
-  GetInboundGuidanceQuery,
-  GetInboundGuidanceResponse,
   GetLabelsPath,
   GetLabelsQuery,
   GetLabelsResponse,
@@ -82,25 +80,6 @@ import {
   GetReportResponse,
   ReportDocument
 } from "./operations/reports";
-import {
-  DeleteSmallAndLightEnrollmentBySellerSKUPath,
-  DeleteSmallAndLightEnrollmentBySellerSKUQuery,
-  GetSmallAndLightEligibilityBySellerSKUPath,
-  GetSmallAndLightEligibilityBySellerSKUQuery,
-  GetSmallAndLightEligibilityBySellerSKUResponse,
-  GetSmallAndLightEnrollmentBySellerSKUPath,
-  GetSmallAndLightEnrollmentBySellerSKUQuery,
-  GetSmallAndLightEnrollmentBySellerSKUResponse,
-  GetSmallAndLightFeePreviewBody,
-  GetSmallAndLightFeePreviewResponse,
-  PutSmallAndLightEnrollmentBySellerSKUPath,
-  PutSmallAndLightEnrollmentBySellerSKUQuery,
-  PutSmallAndLightEnrollmentBySellerSKUResponse
-} from "./operations/fbaSmallAndLight";
-import {
-  GetAuthorizationCodeQuery,
-  GetAuthorizationCodeResponse
-} from "./operations/authorization";
 import {
   GetCatalogItemPath,
   GetCatalogItemQuery,
@@ -175,7 +154,6 @@ declare module "amazon-sp-api-tcat" {
   }
 
   type Operation =
-    | "getAuthorizationCode"
     | "getCatalogItem"
     | "listCatalogCategories"
     | "getItemEligibilityPreview"
@@ -194,7 +172,6 @@ declare module "amazon-sp-api-tcat" {
     | "listFinancialEventsByGroupId"
     | "listFinancialEventsByOrderId"
     | "listFinancialEvents"
-    | "getInboundGuidance"
     | "updateInboundShipment"
     | "createInboundShipment"
     | "getPreorderInfo"
@@ -224,9 +201,7 @@ declare module "amazon-sp-api-tcat" {
     | "getMarketplaceParticipations"
     | string;
 
-  type ObjectType<TOperation> = TOperation extends "getAuthorizationCode"
-    ? GetAuthorizationCodeResponse
-    : TOperation extends "getCatalogItem"
+  type ObjectType<TOperation> = TOperation extends "getCatalogItem"
     ? GetCatalogItemResponse
     : TOperation extends "listCatalogCategories"
     ? ListCatalogCategoriesResponse
@@ -262,8 +237,6 @@ declare module "amazon-sp-api-tcat" {
     ? ListFinancialEventsByOrderIdResponse
     : TOperation extends "listFinancialEvents"
     ? ListFinancialEventsResponse
-    : TOperation extends "getInboundGuidance"
-    ? GetInboundGuidanceResponse
     : TOperation extends "updateInboundShipment"
     ? UpdateInboundShipmentResponse
     : TOperation extends "createInboundShipment"
@@ -326,9 +299,7 @@ declare module "amazon-sp-api-tcat" {
     : any;
 
   type QueryType<TOperation extends Operation> =
-    TOperation extends "getAuthorizationCode"
-      ? GetAuthorizationCodeQuery
-      : TOperation extends "getCatalogItem"
+    TOperation extends "getCatalogItem"
       ? GetCatalogItemQuery
       : TOperation extends "listCatalogCategories"
       ? ListCatalogCategoriesQuery
@@ -354,8 +325,6 @@ declare module "amazon-sp-api-tcat" {
       ? ListFinancialEventsByOrderIdQuery
       : TOperation extends "listFinancialEvents"
       ? ListFinancialEventsQuery
-      : TOperation extends "getInboundGuidance"
-      ? GetInboundGuidanceQuery
       : TOperation extends "getPreorderInfo"
       ? GetPreorderInfoQuery
       : TOperation extends "confirmPreorder"
